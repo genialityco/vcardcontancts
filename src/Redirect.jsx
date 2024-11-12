@@ -4,11 +4,10 @@ import { useLoaderData } from "react-router-dom";
 const Redirect = (props) => {
   const { persona } = useLoaderData();
   const [url, setUrl] = useState("");
- 
 
   useEffect(() => {
     if (!persona) return;
-   
+
     let link = null;
     switch (persona) {
       case "linapaolabonilla":
@@ -25,7 +24,7 @@ const Redirect = (props) => {
         break;
     }
     setUrl(link);
-    if (link) window.location.href = url;
+    if (link) window.location.href = link;
   }, [persona]);
 
   if (!url)
