@@ -25,7 +25,7 @@ const Redirect = (props) => {
         break;
     }
     setUrl(link);
-    //window.location.href = url;
+    if (link) window.location.href = url;
   }, [persona]);
 
   if (!url)
@@ -40,7 +40,6 @@ const Redirect = (props) => {
       <a href={url}>
         {" "}
         Ir a tarjeta de: {persona} {url}
-        {url}
       </a>
     </h5>
   );
